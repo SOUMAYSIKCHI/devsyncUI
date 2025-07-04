@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './components/devsync-button.css';
+@import './components/devsync-card.css';
+@import './components/devsync-modal.css';
+
+

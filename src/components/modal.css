@@ -1,0 +1,65 @@
+/* Modal Component Styles */
+.devsync-modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.devsync-modal-container {
+  @apply bg-white rounded-lg shadow-xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto;
+}
+
+.devsync-modal-header {
+  @apply flex items-center justify-between px-6 py-4 border-b border-gray-200;
+}
+
+.devsync-modal-title {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.devsync-modal-close {
+  @apply text-gray-400 hover:text-gray-600 transition-colors duration-200;
+}
+
+.devsync-modal-body {
+  @apply px-6 py-4;
+}
+
+.devsync-modal-footer {
+  @apply flex items-center justify-end space-x-3 px-6 py-4 border-t border-gray-200;
+}
+
+.devsync-modal-sm {
+  @apply max-w-sm;
+}
+
+.devsync-modal-lg {
+  @apply max-w-2xl;
+}
+
+.devsync-modal-xl {
+  @apply max-w-4xl;
+}
+
+.devsync-modal-full {
+  @apply max-w-none w-full h-full m-0 rounded-none;
+}
+
+.devsync-modal-full .devsync-modal-container {
+  @apply max-h-none h-full rounded-none;
+}
+
+/* Animation classes */
+.devsync-modal-enter {
+  @apply opacity-0 scale-95;
+}
+
+.devsync-modal-enter-active {
+  @apply opacity-100 scale-100 transition-all duration-200;
+}
+
+.devsync-modal-exit {
+  @apply opacity-100 scale-100;
+}
+
+.devsync-modal-exit-active {
+  @apply opacity-0 scale-95 transition-all duration-200;
+} 
