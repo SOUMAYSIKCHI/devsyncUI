@@ -1,16 +1,21 @@
 {
   "name": "devsyncui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tailwind UI by DevSync",
-  "main": "src/plugin.js",                        
+  "main": "src/plugin.js",
   "exports": {
     "style": "./src/index.css"
   },
-  "style": "./src/index.css",                    
+  "style": "./src/index.css",
   "files": [
     "src/**/*"
   ],
-  "keywords": ["tailwind", "component", "ui", "devsync"],
+  "keywords": [
+    "tailwind",
+    "component",
+    "ui",
+    "devsync"
+  ],
   "author": "Soumay",
   "license": "MIT",
   "homepage": "https://github.com/SOUMAYSIKCHI/devsyncUI#readme",
