@@ -74,6 +74,23 @@ In your main CSS file (usually `src/index.css`):
 
 ✅ This pulls all the component styles into your project.
 
+### Step 5: Register Plugin in tailwind.config.js
+
+```js
+import devsyncPlugin from 'devsyncui/plugin';
+
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/devsyncui/**/*.{js,ts,jsx,tsx,css}"
+  ],
+  plugins: [devsyncPlugin]
+}
+```
+
+✅ This registers the DevSyncUI plugin with Tailwind CSS.
+
 ---
 
 ## 💡 Usage Examples

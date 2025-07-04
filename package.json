@@ -4,7 +4,8 @@
   "description": "Tailwind UI by DevSync",
   "main": "src/plugin.js",
   "exports": {
-    "style": "./src/index.css"
+    "style": "./src/index.css",
+    "plugin": "./src/plugin.js"
   },
   "style": "./src/index.css",
   "files": [
