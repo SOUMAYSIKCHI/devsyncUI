@@ -29,7 +29,7 @@ npm install devsync-ui
 
 1. Install the package:
 ```bash
-npm install devsync-ui
+npm install devsyncui
 ```
 
 2. Add to your `tailwind.config.js`:
