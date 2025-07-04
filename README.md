@@ -1,218 +1,175 @@
-# DevSyncUI
+# 🚀 DevSyncUI — Tailwind Component Library
 
-A modern, lightweight component library built with Tailwind CSS. DevSyncUI provides a set of reusable, accessible, and customizable UI components that can be easily integrated into any project.
+Welcome to **DevSyncUI**, a lightweight and modern UI library built with **Tailwind CSS**. All components are prefixed with `.devsync-` to avoid conflicts and are ready to drop into any project. This library is perfect for developers who want consistent, customizable, and clean UI without writing everything from scratch.
 
-## Features
+---
 
-- 🎨 **Modern Design**: Clean, contemporary components with smooth animations
-- 🚀 **Lightweight**: Built on Tailwind CSS for optimal performance
-- 🎯 **Accessible**: WCAG compliant components with proper ARIA attributes
-- 🔧 **Customizable**: Easy to customize with Tailwind's utility classes
-- 📱 **Responsive**: Mobile-first design approach
-- 🎭 **Flexible**: Use as CSS classes or integrate as a Tailwind plugin
+## 📌 Why DevSyncUI?
 
-## Installation
+- ✅ Fully Tailwind-based — no JS, no bloat.
+- 🧱 Modular components — buttons, cards, modals, and more.
+- 🛡️ Scoped utility classes — uses `.devsync-*` to prevent naming collisions.
+- 🎯 Designed for production — responsive, accessible, and extensible.
 
-### Option 1: CSS Import (Recommended)
+---
 
-1. Install the package:
+## 🛠️ Getting Started
+
+This guide helps you **install Tailwind**, **add DevSyncUI**, and **use components** in your project — even if you're a beginner.
+
+---
+
+### Step 1: Create a Vite Project (Optional if you have one)
+
 ```bash
-npm install devsync-ui
+npm create vite@latest my-app -- --template react
+cd my-app
+npm install
 ```
 
-2. Import the CSS in your project:
-```css
-@import 'devsync-ui/dist/devsync-ui.css';
+### Step 2: Install Tailwind CSS
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-### Option 2: Tailwind Plugin
+This creates `tailwind.config.js` and `postcss.config.js`.
 
-1. Install the package:
+Now update your Tailwind config:
+
+```js
+// tailwind.config.js
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/devsyncui/**/*.{js,ts,jsx,tsx,css}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+### Step 3: Install DevSyncUI
+
 ```bash
 npm install devsyncui
 ```
 
-2. Add to your `tailwind.config.js`:
-```javascript
-module.exports = {
-  plugins: [
-    require('devsync-ui/src/plugin.js'),
-  ],
-}
+### Step 4: Import the Styles
+
+In your main CSS file (usually `src/index.css`):
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import DevSyncUI components */
+@import 'devsyncui/style';
 ```
 
-## Components
+✅ This pulls all the component styles into your project.
 
-### Buttons
+---
+
+## 💡 Usage Examples
+
+### 🔘 Button
 
 ```html
-<!-- Primary button -->
-<button class="btn btn-primary">Primary Button</button>
-
-<!-- Secondary button -->
-<button class="btn btn-secondary">Secondary Button</button>
-
-<!-- Success button -->
-<button class="btn btn-success">Success Button</button>
-
-<!-- Danger button -->
-<button class="btn btn-danger">Danger Button</button>
-
-<!-- Outline button -->
-<button class="btn btn-outline">Outline Button</button>
-
-<!-- Sizes -->
-<button class="btn btn-primary btn-sm">Small</button>
-<button class="btn btn-primary">Default</button>
-<button class="btn btn-primary btn-lg">Large</button>
+<button class="devsync-btn devsync-btn-primary">
+  Click Me
+</button>
 ```
 
-### Cards
+### 📦 Card
 
 ```html
-<!-- Basic card -->
-<div class="card">
-  <div class="card-header">
-    <h3 class="card-title">Card Title</h3>
-    <p class="card-subtitle">Card subtitle</p>
+<div class="devsync-card devsync-card-hover">
+  <div class="devsync-card-header">
+    <h2 class="devsync-card-title">Welcome</h2>
   </div>
-  <div class="card-body">
-    <p>Card content goes here...</p>
-  </div>
-  <div class="card-footer">
-    <button class="btn btn-primary">Action</button>
-  </div>
-</div>
-
-<!-- Interactive card -->
-<div class="card card-interactive">
-  <div class="card-body">
-    <p>Clickable card content</p>
-  </div>
-</div>
-
-<!-- Compact card -->
-<div class="card card-compact">
-  <div class="card-body">
-    <p>Compact card content</p>
+  <div class="devsync-card-body">
+    This is a card component from DevSyncUI.
   </div>
 </div>
 ```
 
-### Modals
+### 🪟 Modal (Custom Usage with Tailwind Logic)
 
 ```html
-<!-- Modal overlay -->
-<div class="modal-overlay">
-  <div class="modal-container">
-    <div class="modal-header">
-      <h3 class="modal-title">Modal Title</h3>
-      <button class="modal-close">&times;</button>
+<div class="devsync-modal-overlay">
+  <div class="devsync-modal-container">
+    <div class="devsync-modal-header">
+      <h3 class="devsync-modal-title">Modal Title</h3>
+      <button class="devsync-modal-close">×</button>
     </div>
-    <div class="modal-body">
-      <p>Modal content goes here...</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary">Cancel</button>
-      <button class="btn btn-primary">Confirm</button>
+    <div class="devsync-modal-body">Some content...</div>
+    <div class="devsync-modal-footer">
+      <button class="devsync-btn devsync-btn-secondary">Close</button>
     </div>
   </div>
 </div>
-
-<!-- Modal sizes -->
-<div class="modal-container modal-sm">Small Modal</div>
-<div class="modal-container modal-lg">Large Modal</div>
-<div class="modal-container modal-xl">Extra Large Modal</div>
-<div class="modal-container modal-full">Full Screen Modal</div>
 ```
 
-## Customization
+---
 
-### Colors
+## 📁 Available Components
 
-You can customize the color scheme by extending the Tailwind config:
+| Component | Classes |
+|-----------|---------|
+| Button | `.devsync-btn`, `.devsync-btn-primary`, `.devsync-btn-outline`, etc. |
+| Card | `.devsync-card`, `.devsync-card-header`, `.devsync-card-body`, etc. |
+| Modal | `.devsync-modal-container`, `.devsync-modal-header`, `.devsync-modal-footer` |
 
-```javascript
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          50: '#f0f9ff',
-          500: '#3b82f6',
-          900: '#1e3a8a',
-        }
-      }
-    }
-  }
-}
-```
+---
 
-### Spacing
+## 🧑‍💻 For Developers
 
-Adjust component spacing by modifying the padding and margin values in the component CSS files.
+### Update Component Styles
 
-## Development
+All styles live in `src/components/*.css`. You can edit, add new ones, or split into more files.
 
-### Setup
+### To Publish Your Own Updates:
 
-1. Clone the repository:
 ```bash
-git clone https://github.com/devsync/devsync-ui.git
-cd devsync-ui
+npm version patch      # Or minor, major
+git add .
+git commit -m "Update button style"
+git push origin main --follow-tags
+npm publish
 ```
 
-2. Install dependencies:
-```bash
-npm install
+---
+
+## 🔐 License & Usage Terms
+
+```
+MIT © 2025 Soumay Sikchi
 ```
 
-3. Start development:
-```bash
-npm run dev
-```
+### ✅ You Can:
+- Use in any personal or commercial project
+- Import via npm and apply classes in production
 
-### Build
+### ❌ You Cannot:
+- Copy the entire repo and reupload as your own npm package
+- Rename the package and redistribute without permission
 
-Build the production CSS:
-```bash
-npm run build
-```
+---
 
-### Linting
+## 📬 Feedback & Contributions
 
-Check for CSS issues:
-```bash
-npm run lint
-```
+Feel free to open GitHub Issues for bugs or suggestions. Contributions welcome soon.
 
-Fix CSS issues automatically:
-```bash
-npm run lint:fix
-```
+---
 
-## Browser Support
+## 🌐 Links
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Support
-
-- 📧 Email: support@devsync.com
-- 🐛 Issues: [GitHub Issues](https://github.com/devsync/devsync-ui/issues)
-- 📖 Documentation: [GitHub Wiki](https://github.com/devsync/devsync-ui/wiki) 
+- 📦 [NPM Package](#)
+- 🧠 **Author**: Soumay
+- 🎨 **Demo Website** (coming soon)
