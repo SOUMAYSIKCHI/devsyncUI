@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './components/devsync-button.css';
-@import './components/devsync-card.css';
-@import './components/devsync-modal.css';
 @import "./components/navbar.css";
 @import "./components/card.css";
 @import "./components/modal.css";
@@ -13,4 +10,3 @@
 @import "./components/footer.css";
 @import "./components/dropdown.css";
 @import "./components/sidebar.css";
-
