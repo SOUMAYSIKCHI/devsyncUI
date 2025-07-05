@@ -4,20 +4,26 @@
   "description": "Tailwind UI by DevSync",
   "main": "src/plugin.js",
   "exports": {
-    "style": "./src/index.css",
+    "style": "./dist/devsyncui.min.css",
     "plugin": "./src/plugin.js"
   },
-  "style": "./src/index.css",
+  "style": "./dist/devsyncui.min.css",
   "files": [
+    "dist",
     "src/**/*"
   ],
   "keywords": [
     "tailwind",
     "component",
     "ui",
-    "devsync"
+    "devsync",
+    "tailwindcss-plugin",
+    "devsyncui"
   ],
-  "author": "Soumay",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/index.css -o ./dist/devsyncui.min.css --minify"
+  },
+  "author": "Soumay Sikchi",
   "license": "MIT",
   "homepage": "https://github.com/SOUMAYSIKCHI/devsyncUI#readme",
   "repository": {
