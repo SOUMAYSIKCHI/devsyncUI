@@ -5,6 +5,17 @@ module.exports = {
     "./src/**/*.css",
     "./index.html",
   ],
+  safelist: [
+    { pattern: /^devsync-btn-/ },
+    { pattern: /^devsync-card-/ },
+    { pattern: /^devsync-modal-/ },
+    { pattern: /^devsync-accordion-/ },
+    { pattern: /^devsync-navbar-/ },
+    { pattern: /^devsync-footer-/ },
+    { pattern: /^devsync-sidebar-/ },
+    { pattern: /^devsync-dropdown-/ },
+    { pattern: /^devsync-/ }, // optional catch-all fallback
+  ],
   theme: {
     extend: {
       colors: {
@@ -31,11 +42,24 @@ module.exports = {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-        }
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
+        sans: [
+          'Inter',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'sans-serif',
+        ],
+        mono: [
+          'JetBrains Mono',
+          'Fira Code',
+          'Consolas',
+          'monospace',
+        ],
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',
@@ -59,13 +83,13 @@ module.exports = {
         },
       },
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 10px -2px rgba(0, 0, 0, 0.04)',
+        soft: '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        medium: '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        strong: '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 2px 10px -2px rgba(0, 0, 0, 0.04)',
       },
     },
   },
   plugins: [
     require('./src/plugin.js'),
   ],
-} 
+}

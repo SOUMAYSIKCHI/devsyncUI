@@ -1,5 +1,6 @@
-/* Basic Footer */
-.devsync-footer-basic {
+@layer components {
+  /* Basic Footer */
+  .devsync-footer-basic {
     @apply bg-gray-900 text-white py-12;
   }
   
@@ -539,3 +540,4 @@
   .devsync-footer-badge-hot {
     @apply bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium;
   }
+}

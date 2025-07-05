@@ -1,3 +1,4 @@
+@layer components {
 /* Basic Sidebar */
 .devsync-sidebar-basic {
     @apply bg-gray-900 text-white w-64 min-h-screen fixed left-0 top-0 shadow-xl transform transition-transform duration-300 z-50;
@@ -548,5 +549,6 @@
   }
   
   .devsync-sidebar-push-content.devsync-sidebar-collapsed {
-    @apply ml-16;
+    @apply ml-16; 
   }
+}

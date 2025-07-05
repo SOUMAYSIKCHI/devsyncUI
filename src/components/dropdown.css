@@ -1,4 +1,5 @@
 /* Basic Dropdown */
+@layer components {
 .devsync-dropdown-basic {
     @apply relative inline-block;
   }
@@ -405,3 +406,4 @@
   .devsync-dropdown-narrow {
     @apply min-w-32;
   }
+}

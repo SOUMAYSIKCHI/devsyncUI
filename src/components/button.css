@@ -1,5 +1,5 @@
 /* DevSync UI - Button Component Styles */
-
+@layer components {
 .devsync-btn {
   @apply inline-flex items-center justify-center px-4 py-2 
          text-sm font-semibold rounded-md transition-all 
@@ -145,4 +145,6 @@
   .devsync-btn-responsive {
     @apply px-6 py-3 text-base;
   }
+}
+
 }

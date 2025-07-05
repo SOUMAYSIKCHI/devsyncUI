@@ -1,4 +1,5 @@
 /* Basic Accordion */
+@layer components {
 .devsync-accordion-basic {
     @apply border border-gray-200 rounded-lg overflow-hidden;
   }
@@ -461,3 +462,4 @@
   .devsync-accordion-single .devsync-accordion-item:not(.devsync-accordion-active) .devsync-accordion-content {
     @apply max-h-0;
   }
+}

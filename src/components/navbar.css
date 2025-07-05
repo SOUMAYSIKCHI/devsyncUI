@@ -1,3 +1,4 @@
+@layer components {
 /* Basic Navbar */
 .devsync-navbar-basic {
     @apply bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between shadow-sm;
@@ -432,3 +433,4 @@
   .devsync-navbar-divider {
     @apply h-6 w-px bg-gray-300 mx-4;
   }
+}

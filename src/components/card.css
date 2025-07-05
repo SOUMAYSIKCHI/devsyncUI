@@ -1,4 +1,5 @@
 /* Basic Shadow Card */
+@layer components {
 .devsync-card-basic {
   @apply bg-white rounded-lg p-6 shadow-md transition-all duration-300;
 }
@@ -573,4 +574,6 @@
 }
 .devsync-card-feedback .star {
   @apply w-8 h-8 text-yellow-400 cursor-pointer hover:text-yellow-500;
+}
+
 }
