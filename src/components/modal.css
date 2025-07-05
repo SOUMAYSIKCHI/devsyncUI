@@ -63,3 +63,349 @@
 .devsync-modal-exit-active {
   @apply opacity-0 scale-95 transition-all duration-200;
 } 
+
+
+/* Basic Modal */
+.devsync-modal-basic {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-basic .content {
+  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl;
+}
+
+/* Slide Down Modal */
+.devsync-modal-slide-down {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-slide-down .content {
+  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl;
+  animation: devsync-slide-down 0.3s ease-out;
+}
+@keyframes devsync-slide-down {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide Up Modal */
+.devsync-modal-slide-up {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-slide-up .content {
+  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl;
+  animation: devsync-slide-up 0.3s ease-out;
+}
+@keyframes devsync-slide-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scale Modal */
+.devsync-modal-scale {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-scale .content {
+  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl;
+  animation: devsync-scale-in 0.3s ease-out;
+}
+@keyframes devsync-scale-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fade Modal */
+.devsync-modal-fade {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+  animation: devsync-fade-in 0.3s ease-out;
+}
+.devsync-modal-fade .content {
+  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl;
+}
+@keyframes devsync-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Glassmorphism Modal */
+.devsync-modal-glass {
+  @apply fixed inset-0 z-50 flex items-center justify-center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+.devsync-modal-glass .content {
+  @apply rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl border border-white/20;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Bottom Sheet Modal */
+.devsync-modal-bottom-sheet {
+  @apply fixed inset-0 z-50 flex items-end justify-center bg-black/50;
+}
+.devsync-modal-bottom-sheet .content {
+  @apply bg-white rounded-t-2xl p-6 w-full shadow-xl;
+  animation: devsync-slide-up-bottom 0.3s ease-out;
+}
+@keyframes devsync-slide-up-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Side Modal (Left) */
+.devsync-modal-side-left {
+  @apply fixed inset-0 z-50 flex items-center bg-black/50;
+}
+.devsync-modal-side-left .content {
+  @apply bg-white h-full w-80 p-6 shadow-xl;
+  animation: devsync-slide-right 0.3s ease-out;
+}
+@keyframes devsync-slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Side Modal (Right) */
+.devsync-modal-side-right {
+  @apply fixed inset-0 z-50 flex items-center justify-end bg-black/50;
+}
+.devsync-modal-side-right .content {
+  @apply bg-white h-full w-80 p-6 shadow-xl;
+  animation: devsync-slide-left 0.3s ease-out;
+}
+@keyframes devsync-slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Fullscreen Modal */
+.devsync-modal-fullscreen {
+  @apply fixed inset-0 z-50 bg-white;
+  animation: devsync-fade-in-full 0.3s ease-out;
+}
+.devsync-modal-fullscreen .content {
+  @apply h-full w-full p-6 overflow-auto;
+}
+@keyframes devsync-fade-in-full {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Alert Modal */
+.devsync-modal-alert {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/60;
+}
+.devsync-modal-alert .content {
+  @apply bg-white rounded-2xl p-8 max-w-sm w-full mx-4 shadow-2xl text-center;
+  animation: devsync-bounce-in 0.4s ease-out;
+}
+@keyframes devsync-bounce-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Confirmation Modal */
+.devsync-modal-confirm {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-confirm .content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-xl border-t-4 border-t-blue-500;
+}
+
+/* Success Modal */
+.devsync-modal-success {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-success .content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-xl border-t-4 border-t-green-500;
+  animation: devsync-success-bounce 0.5s ease-out;
+}
+@keyframes devsync-success-bounce {
+  0% {
+    transform: scale(0.9) translateY(-10px);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Error Modal */
+.devsync-modal-error {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-error .content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-xl border-t-4 border-t-red-500;
+  animation: devsync-shake 0.5s ease-out;
+}
+@keyframes devsync-shake {
+  0%, 20%, 40%, 60%, 80% {
+    transform: translateX(-3px);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Warning Modal */
+.devsync-modal-warning {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-warning .content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-xl border-t-4 border-t-yellow-500;
+}
+
+/* Info Modal */
+.devsync-modal-info {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-info .content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-xl border-t-4 border-t-blue-400;
+}
+
+/* Dark Modal */
+.devsync-modal-dark {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/70;
+}
+.devsync-modal-dark .content {
+  @apply bg-gray-900 text-white rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl border border-gray-700;
+}
+
+/* Gradient Modal */
+.devsync-modal-gradient {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-gradient .content {
+  @apply rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl text-white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Image Header Modal */
+.devsync-modal-image {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50;
+}
+.devsync-modal-image .content {
+  @apply bg-white rounded-xl overflow-hidden max-w-md w-full mx-4 shadow-xl;
+}
+.devsync-modal-image .header {
+  @apply h-32 bg-gradient-to-r from-purple-500 to-pink-500;
+}
+.devsync-modal-image .body {
+  @apply p-6;
+}
+
+/* Compact Modal */
+.devsync-modal-compact {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/40;
+}
+.devsync-modal-compact .content {
+  @apply bg-white rounded-lg p-4 max-w-xs w-full mx-4 shadow-lg;
+}
+
+/* Large Modal */
+.devsync-modal-large {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4;
+}
+.devsync-modal-large .content {
+  @apply bg-white rounded-xl p-8 max-w-4xl w-full h-full max-h-[80vh] shadow-2xl overflow-auto;
+}
+
+/* Video Modal */
+.devsync-modal-video {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/80;
+}
+.devsync-modal-video .content {
+  @apply rounded-lg overflow-hidden max-w-4xl w-full mx-4 shadow-2xl;
+}
+
+/* Loading Modal */
+.devsync-modal-loading {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/30;
+}
+.devsync-modal-loading .content {
+  @apply bg-white rounded-xl p-8 shadow-xl flex flex-col items-center;
+}
+.devsync-modal-loading .spinner {
+  @apply w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full;
+  animation: devsync-spin 1s linear infinite;
+}
+@keyframes devsync-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Notification Modal */
+.devsync-modal-notification {
+  @apply fixed top-4 right-4 z-50 max-w-sm w-full;
+  animation: devsync-slide-in-right 0.3s ease-out;
+}
+.devsync-modal-notification .content {
+  @apply bg-white rounded-lg p-4 shadow-xl border-l-4 border-l-blue-500;
+}
+@keyframes devsync-slide-in-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+

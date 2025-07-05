@@ -6,10 +6,10 @@ Welcome to **DevSyncUI**, a lightweight and modern UI library built with **Tailw
 
 ## 📌 Why DevSyncUI?
 
-- ✅ Fully Tailwind-based — no JS, no bloat.
-- 🧱 Modular components — buttons, cards, modals, and more.
-- 🛡️ Scoped utility classes — uses `.devsync-*` to prevent naming collisions.
-- 🎯 Designed for production — responsive, accessible, and extensible.
+- ✅ **Fully Tailwind-based** — no JS, no bloat
+- 🧱 **Modular components** — buttons, cards, modals, and more
+- 🛡️ **Scoped utility classes** — uses `.devsync-*` to prevent naming collisions
+- 🎯 **Designed for production** — responsive, accessible, and extensible
 
 ---
 
@@ -18,8 +18,15 @@ Welcome to **DevSyncUI**, a lightweight and modern UI library built with **Tailw
 This guide helps you **install Tailwind**, **add DevSyncUI**, and **use components** in your project — even if you're a beginner.
 
 ---
+## 🔗 CDN Usage
 
-### Step 1: Create a Vite Project (Optional if you have one)
+Include DevSyncUI directly in your HTML:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devsyncui/src/index.css" />
+```
+
+### Step 1: Create a Vite Project (Optional)
 
 ```bash
 npm create vite@latest my-app -- --template react
@@ -34,22 +41,16 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-This creates `tailwind.config.js` and `postcss.config.js`.
+⚠️ **Note:** If `tailwind.config.js` or `postcss.config.js` aren't created automatically, create them manually:
 
-Now update your Tailwind config:
-
+**postcss.config.js** (Recommended Production Version)
 ```js
-// tailwind.config.js
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/devsyncui/**/*.{js,ts,jsx,tsx,css}"
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {})
+  }
 }
 ```
 
@@ -59,22 +60,18 @@ export default {
 npm install devsyncui
 ```
 
-### Step 4: Import the Styles
-
-In your main CSS file (usually `src/index.css`):
+### Step 4: Import Styles in your main CSS (e.g., `src/index.css`)
 
 ```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import DevSyncUI components */
+/* Import DevSyncUI styles */
 @import 'devsyncui/style';
 ```
 
-✅ This pulls all the component styles into your project.
-
-### Step 5: Register Plugin in tailwind.config.js
+### Step 5: Register Plugin in `tailwind.config.js`
 
 ```js
 import devsyncPlugin from 'devsyncui/plugin';
@@ -85,7 +82,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/devsyncui/**/*.{js,ts,jsx,tsx,css}"
   ],
-  plugins: [devsyncPlugin]
+  theme: {
+    extend: {},
+  },
+  plugins: [devsyncPlugin],
 }
 ```
 
@@ -93,70 +93,24 @@ export default {
 
 ---
 
-## 💡 Usage Examples
+## 📚 Component Classes
 
-### 🔘 Button
-
-```html
-<button class="devsync-btn devsync-btn-primary">
-  Click Me
-</button>
-```
-
-### 📦 Card
-
-```html
-<div class="devsync-card devsync-card-hover">
-  <div class="devsync-card-header">
-    <h2 class="devsync-card-title">Welcome</h2>
-  </div>
-  <div class="devsync-card-body">
-    This is a card component from DevSyncUI.
-  </div>
-</div>
-```
-
-### 🪟 Modal (Custom Usage with Tailwind Logic)
-
-```html
-<div class="devsync-modal-overlay">
-  <div class="devsync-modal-container">
-    <div class="devsync-modal-header">
-      <h3 class="devsync-modal-title">Modal Title</h3>
-      <button class="devsync-modal-close">×</button>
-    </div>
-    <div class="devsync-modal-body">Some content...</div>
-    <div class="devsync-modal-footer">
-      <button class="devsync-btn devsync-btn-secondary">Close</button>
-    </div>
-  </div>
-</div>
-```
+View the full list of utility classes, variants, and themes on the [official documentation site](https://devsyncui.dev).
 
 ---
 
-## 📁 Available Components
-
-| Component | Classes |
-|-----------|---------|
-| Button | `.devsync-btn`, `.devsync-btn-primary`, `.devsync-btn-outline`, etc. |
-| Card | `.devsync-card`, `.devsync-card-header`, `.devsync-card-body`, etc. |
-| Modal | `.devsync-modal-container`, `.devsync-modal-header`, `.devsync-modal-footer` |
-
----
-
-## 🧑‍💻 For Developers
+## 🧑‍💻 Developer Notes
 
 ### Update Component Styles
 
-All styles live in `src/components/*.css`. You can edit, add new ones, or split into more files.
+All styles live in `src/components/*.css`. You can edit, extend, or organize them as needed.
 
-### To Publish Your Own Updates:
+### To Publish New Changes
 
 ```bash
-npm version patch      # Or minor, major
+npm version patch      # Or use: minor, major
 git add .
-git commit -m "Update button style"
+git commit -m "Update styles"
 git push origin main --follow-tags
 npm publish
 ```
@@ -165,28 +119,46 @@ npm publish
 
 ## 🔐 License & Usage Terms
 
-```
-MIT © 2025 Soumay Sikchi
-```
-
-### ✅ You Can:
-- Use in any personal or commercial project
-- Import via npm and apply classes in production
-
-### ❌ You Cannot:
-- Copy the entire repo and reupload as your own npm package
-- Rename the package and redistribute without permission
+See full [terms.md](./terms.md)
 
 ---
 
 ## 📬 Feedback & Contributions
 
-Feel free to open GitHub Issues for bugs or suggestions. Contributions welcome soon.
+Feel free to open GitHub Issues for bugs or suggestions. Contributions will be open soon.
 
 ---
 
 ## 🌐 Links
 
-- 📦 [NPM Package](#)
-- 🧠 **Author**: Soumay
-- 🎨 **Demo Website** (coming soon)
+- 📦 **NPM Package**: [devsyncui](https://www.npmjs.com/package/devsyncui)
+- 🧠 **Author**: Soumay Sikchi
+- 🎨 **Demo Website**: Coming soon
+- 🧾 **Documentation**: [devsyncui.dev](https://devsyncui.dev)
+
+---
+
+## 📄 License & Usage Terms
+
+```markdown
+# License & Usage Terms
+
+MIT License © 2025 Soumay Sikchi
+
+---
+
+## ✅ You May:
+
+- Use DevSyncUI in personal and commercial projects
+- Modify and extend the library in your own apps
+- Share components in open-source projects with attribution
+
+## ❌ You May Not:
+
+- Re-upload the DevSyncUI library as a new npm package
+- Rename the library and redistribute without consent
+- Claim full authorship of this codebase without contributing
+
+---
+
+For collaboration, licensing deals, or enterprise distribution rights, please reach out via the official contact channels.

@@ -1,48 +1,576 @@
-/* Card Component Styles */
-.devsync-card {
-  @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden;
+/* Basic Shadow Card */
+.devsync-card-basic {
+  @apply bg-white rounded-lg p-6 shadow-md transition-all duration-300;
 }
 
-.devsync-card-header {
-  @apply px-6 py-4 border-b border-gray-200 bg-gray-50;
+/* Hover Elevation Card */
+.devsync-card-hover-elevation {
+  @apply bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer;
 }
 
+/* Glassmorphism Card */
+.devsync-card-glassmorphism {
+  @apply bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-lg;
+}
+
+/* Gradient Background Card */
+.devsync-card-gradient {
+  @apply bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl p-6 text-white shadow-lg hover:shadow-xl transition-shadow duration-300;
+}
+
+/* Left Slide Animated Card */
+.devsync-card-slide-left {
+  @apply bg-white rounded-lg p-6 shadow-md opacity-0 transform -translate-x-8;
+  animation: devsync-slide-left 0.6s ease-out forwards;
+}
+
+@keyframes devsync-slide-left {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Card */
+.devsync-card-fade-in {
+  @apply bg-white rounded-xl p-6 shadow-lg opacity-0;
+  animation: devsync-fade-in 0.8s ease-out forwards;
+}
+
+@keyframes devsync-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Image Header Card */
+.devsync-card-image-header {
+  @apply bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300;
+}
+
+.devsync-card-image-header .devsync-card-image {
+  @apply w-full h-48 object-cover;
+}
+
+.devsync-card-image-header .devsync-card-content {
+  @apply p-6;
+}
+
+/* Icon Card */
+.devsync-card-icon {
+  @apply bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:border-blue-200 transition-colors duration-300;
+}
+
+.devsync-card-icon .devsync-card-icon-wrapper {
+  @apply w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4;
+}
+
+/* Border Left Stripe Card */
+.devsync-card-border-stripe {
+  @apply bg-white rounded-lg p-6 shadow-md border-l-4 border-emerald-500 hover:border-l-6 transition-all duration-300;
+}
+
+/* Badge Card */
+.devsync-card-badge {
+  @apply bg-white rounded-xl p-6 shadow-md relative overflow-hidden;
+}
+
+.devsync-card-badge .devsync-card-badge-element {
+  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full transform rotate-12;
+}
+
+/* Avatar Profile Card */
+.devsync-card-avatar-profile {
+  @apply bg-white rounded-2xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow duration-300;
+}
+
+.devsync-card-avatar-profile .devsync-card-avatar {
+  @apply w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100;
+}
+
+.devsync-card-avatar-profile .devsync-card-name {
+  @apply text-lg font-semibold text-gray-900 mb-1;
+}
+
+.devsync-card-avatar-profile .devsync-card-role {
+  @apply text-sm text-gray-500;
+}
+
+/* Two Columns Card */
+.devsync-card-two-columns {
+  @apply bg-white rounded-xl shadow-md overflow-hidden;
+}
+
+.devsync-card-two-columns .devsync-card-columns {
+  @apply flex;
+}
+
+.devsync-card-two-columns .devsync-card-left-column {
+  @apply w-1/2 p-6 bg-gray-50;
+}
+
+.devsync-card-two-columns .devsync-card-right-column {
+  @apply w-1/2 p-6;
+}
+
+/* Compact Card */
+.devsync-card-compact {
+  @apply bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:border-gray-300 transition-colors duration-200;
+}
+
+.devsync-card-compact .devsync-card-compact-title {
+  @apply text-sm font-medium text-gray-900 mb-1;
+}
+
+.devsync-card-compact .devsync-card-compact-subtitle {
+  @apply text-xs text-gray-500;
+}
+
+/* Full Width Flat Card */
+.devsync-card-full-flat {
+  @apply bg-white p-6 border-b border-gray-200 hover:bg-gray-50 transition-colors duration-200;
+}
+
+.devsync-card-full-flat:last-child {
+  @apply border-b-0;
+}
+
+/* Clickable Hover Scale Card */
+.devsync-card-clickable-scale {
+  @apply bg-white rounded-xl p-6 shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+}
+
+.devsync-card-clickable-scale:active {
+  @apply scale-95;
+}
+
+/* Additional Utility Classes */
 .devsync-card-title {
-  @apply text-lg font-semibold text-gray-900;
+  @apply text-xl font-bold text-gray-900 mb-2;
 }
 
 .devsync-card-subtitle {
-  @apply text-sm text-gray-600 mt-1;
+  @apply text-sm text-gray-600 mb-4;
 }
 
-.devsync-card-body {
-  @apply px-6 py-4;
+.devsync-card-description {
+  @apply text-gray-700 leading-relaxed;
 }
 
-.devsync-card-footer {
-  @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+.devsync-card-button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200;
 }
 
-.devsync-card-hover {
-  @apply transition-shadow duration-200 hover:shadow-md;
+.devsync-card-button-outline {
+  @apply border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200;
 }
 
-.devsync-card-interactive {
-  @apply cursor-pointer transition-all duration-200 hover:shadow-md hover:border-gray-300;
+/* Floating Animation */
+@keyframes devsync-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
+.devsync-card-float {
+  animation: devsync-float 3s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes devsync-pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.devsync-card-pulse {
+  animation: devsync-pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+@keyframes devsync-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.devsync-card-shimmer {
+  @apply relative overflow-hidden;
+}
+
+.devsync-card-shimmer::before {
+  content: '';
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: devsync-shimmer 2s infinite;
+}
+
+/* Dark Mode Variants */
+.dark .devsync-card-basic {
+  @apply bg-gray-800 text-white shadow-lg;
+}
+
+.dark .devsync-card-hover-elevation {
+  @apply bg-gray-800 text-white hover:shadow-2xl;
+}
+
+.dark .devsync-card-icon {
+  @apply bg-gray-800 text-white border-gray-700 hover:border-gray-600;
+}
+
+.dark .devsync-card-border-stripe {
+  @apply bg-gray-800 text-white;
+}
+
+.dark .devsync-card-badge {
+  @apply bg-gray-800 text-white;
+}
+
+.dark .devsync-card-avatar-profile {
+  @apply bg-gray-800 text-white;
+}
+
+.dark .devsync-card-two-columns {
+  @apply bg-gray-800 text-white;
+}
+
+.dark .devsync-card-two-columns .devsync-card-left-column {
+  @apply bg-gray-700;
+}
+
+.dark .devsync-card-compact {
+  @apply bg-gray-800 text-white border-gray-700 hover:border-gray-600;
+}
+
+.dark .devsync-card-full-flat {
+  @apply bg-gray-800 text-white border-gray-700 hover:bg-gray-750;
+}
+
+.dark .devsync-card-clickable-scale {
+  @apply bg-gray-800 text-white;
+}
+
+/* Basic Shadow Card */
+.devsync-card-basic {
+  @apply bg-white rounded-lg shadow-lg p-6 border border-gray-100;
+}
+
+/* Hover Elevation Card */
+.devsync-card-hover-elevation {
+  @apply bg-white rounded-xl p-6 shadow-md transition-all duration-300 cursor-pointer border border-gray-50;
+}
+.devsync-card-hover-elevation:hover {
+  @apply shadow-2xl -translate-y-2;
+}
+
+/* Glassmorphism Card */
+.devsync-card-glass {
+  @apply backdrop-blur-lg bg-white/20 border border-white/30 rounded-2xl p-6 shadow-xl;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Gradient Background Card */
+.devsync-card-gradient {
+  @apply rounded-2xl p-6 text-white shadow-lg;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Left Slide Animated Card */
+.devsync-card-slide-left {
+  @apply bg-white rounded-lg p-6 shadow-lg border border-gray-100;
+  animation: devsync-slide-left 0.6s ease-out;
+}
+@keyframes devsync-slide-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade In Card */
+.devsync-card-fade-in {
+  @apply bg-white rounded-lg p-6 shadow-lg border border-gray-100;
+  animation: devsync-fade-in 0.8s ease-out;
+}
+@keyframes devsync-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Image Header Card */
+.devsync-card-image-header {
+  @apply bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100;
+}
+.devsync-card-image-header .header {
+  @apply h-48 bg-gradient-to-r from-blue-500 to-purple-600;
+}
+.devsync-card-image-header .content {
+  @apply p-6;
+}
+
+/* Icon Card */
+.devsync-card-icon {
+  @apply bg-white rounded-lg p-6 shadow-lg border border-gray-100 text-center;
+}
+.devsync-card-icon .icon {
+  @apply w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center text-blue-600;
+}
+
+/* Border Stripe Card */
+.devsync-card-stripe {
+  @apply bg-white rounded-lg p-6 shadow-lg border-l-4 border-l-blue-500 border-t border-r border-b border-gray-100;
+}
+
+/* Badge Card */
+.devsync-card-badge {
+  @apply bg-white rounded-lg p-6 shadow-lg border border-gray-100 relative;
+}
+.devsync-card-badge .badge {
+  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full;
+}
+
+/* Avatar Profile Card */
+.devsync-card-profile {
+  @apply bg-white rounded-lg p-6 shadow-lg border border-gray-100 text-center;
+}
+.devsync-card-profile .avatar {
+  @apply w-16 h-16 mx-auto mb-4 rounded-full bg-gray-200 overflow-hidden;
+}
+.devsync-card-profile .name {
+  @apply font-semibold text-gray-900 mb-1;
+}
+.devsync-card-profile .role {
+  @apply text-sm text-gray-600;
+}
+
+/* Two Column Card */
+.devsync-card-two-column {
+  @apply bg-white rounded-lg p-6 shadow-lg border border-gray-100 grid grid-cols-2 gap-6;
+}
+
+/* Compact Card */
 .devsync-card-compact {
-  @apply px-4 py-3;
+  @apply bg-white rounded-md p-4 shadow-md border border-gray-100 text-sm;
 }
 
-.devsync-card-compact .devsync-card-header {
-  @apply px-4 py-3;
+/* Full Width Flat Card */
+.devsync-card-flat {
+  @apply bg-white border-b border-gray-200 p-6 w-full;
 }
 
-.devsync-card-compact .devsync-card-body {
-  @apply px-4 py-3;
+/* Clickable Scale Card */
+.devsync-card-scale {
+  @apply bg-white rounded-lg p-6 shadow-lg border border-gray-100 cursor-pointer transition-transform duration-200;
+}
+.devsync-card-scale:hover {
+  @apply scale-105;
 }
 
-.devsync-card-compact .devsync-card-footer {
-  @apply px-4 py-3;
-} 
+/* Music Player Card */
+.devsync-card-music {
+  @apply bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-xl;
+  animation: devsync-bounce-in 0.6s ease-out;
+}
+@keyframes devsync-bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Crypto Card */
+.devsync-card-crypto {
+  @apply bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl p-6 text-white shadow-lg;
+  animation: devsync-rotate-in 0.8s ease-out;
+}
+@keyframes devsync-rotate-in {
+  0% {
+    transform: rotate(-180deg) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Weather Card */
+.devsync-card-weather {
+  @apply bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden;
+}
+.devsync-card-weather::before {
+  content: '';
+  @apply absolute inset-0 bg-white/10 backdrop-blur-sm;
+}
+
+/* Recipe Card */
+.devsync-card-recipe {
+  @apply bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100;
+  animation: devsync-slide-up 0.6s ease-out;
+}
+@keyframes devsync-slide-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gaming Card */
+.devsync-card-gaming {
+  @apply bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-6 text-white shadow-xl relative;
+  animation: devsync-pulse 2s infinite;
+}
+@keyframes devsync-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Social Media Card */
+.devsync-card-social {
+  @apply bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl p-6 text-white shadow-lg;
+}
+
+/* E-commerce Card */
+.devsync-card-ecommerce {
+  @apply bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300;
+}
+.devsync-card-ecommerce:hover {
+  @apply shadow-2xl -translate-y-1;
+}
+
+/* News Card */
+.devsync-card-news {
+  @apply bg-white rounded-lg p-6 shadow-md border-l-4 border-l-red-500 border border-gray-100;
+}
+
+/* Health Card */
+.devsync-card-health {
+  @apply bg-gradient-to-br from-green-400 to-teal-500 rounded-2xl p-6 text-white shadow-lg;
+}
+
+/* Travel Card */
+.devsync-card-travel {
+  @apply bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden;
+}
+
+/* Finance Card */
+.devsync-card-finance {
+  @apply bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-white shadow-xl;
+}
+
+/* Education Card */
+.devsync-card-education {
+  @apply bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-6 text-white shadow-lg;
+}
+
+/* Technology Card */
+.devsync-card-tech {
+  @apply bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl p-6 text-white shadow-lg;
+}
+
+/* Swipe Left Card */
+.devsync-card-swipe-left {
+  @apply bg-white rounded-2xl p-6 shadow-lg border border-gray-100 cursor-grab transition-transform duration-200;
+}
+.devsync-card-swipe-left:active {
+  @apply cursor-grabbing scale-95;
+}
+
+/* Swipe Right Card */
+.devsync-card-swipe-right {
+  @apply bg-white rounded-2xl p-6 shadow-lg border border-gray-100 cursor-grab transition-transform duration-200;
+}
+.devsync-card-swipe-right:active {
+  @apply cursor-grabbing scale-95;
+}
+
+/* Login Card */
+.devsync-card-login {
+  @apply bg-white rounded-2xl p-8 shadow-2xl border border-gray-100 max-w-md mx-auto;
+}
+.devsync-card-login .social-btn {
+  @apply w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors;
+}
+
+/* Signup Card */
+.devsync-card-signup {
+  @apply bg-white rounded-2xl p-8 shadow-2xl border border-gray-100 max-w-md mx-auto;
+}
+.devsync-card-signup .social-btn {
+  @apply w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors;
+}
+
+/* Contact Form Card */
+.devsync-card-contact {
+  @apply bg-white rounded-2xl p-8 shadow-xl border border-gray-100;
+}
+.devsync-card-contact .form-group {
+  @apply mb-6;
+}
+.devsync-card-contact .form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+/* Profile Form Card */
+.devsync-card-profile-form {
+  @apply bg-white rounded-2xl p-8 shadow-xl border border-gray-100;
+}
+
+/* Survey Form Card */
+.devsync-card-survey {
+  @apply bg-white rounded-2xl p-8 shadow-xl border border-gray-100;
+}
+
+/* Newsletter Card */
+.devsync-card-newsletter {
+  @apply bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white shadow-xl;
+}
+
+/* Feedback Card */
+.devsync-card-feedback {
+  @apply bg-white rounded-2xl p-6 shadow-lg border border-gray-100;
+}
+.devsync-card-feedback .rating {
+  @apply flex gap-1 mb-4;
+}
+.devsync-card-feedback .star {
+  @apply w-8 h-8 text-yellow-400 cursor-pointer hover:text-yellow-500;
+}

@@ -1,8 +1,13 @@
-/* Button Component Styles */
+/* DevSync UI - Button Component Styles */
+
 .devsync-btn {
-  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply inline-flex items-center justify-center px-4 py-2 
+         text-sm font-semibold rounded-md transition-all 
+         duration-200 focus:outline-none focus:ring-2 
+         focus:ring-offset-2 select-none cursor-pointer;
 }
 
+/* Solid Variants */
 .devsync-btn-primary {
   @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
 }
@@ -20,21 +25,124 @@
 }
 
 .devsync-btn-warning {
-  @apply bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-yellow-500;
+  @apply bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-500;
 }
 
+.devsync-btn-accent {
+  @apply bg-pink-500 text-white hover:bg-pink-600 focus:ring-pink-400;
+}
+
+.devsync-btn-info {
+  @apply bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-400;
+}
+
+/* Outline Variants */
 .devsync-btn-outline {
-  @apply border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 focus:ring-gray-500;
+  @apply bg-transparent border border-gray-300 text-gray-700 
+         hover:bg-gray-100 focus:ring-gray-500;
+}
+
+.devsync-btn-outline-primary {
+  @apply border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500;
+}
+
+.devsync-btn-outline-success {
+  @apply border-green-600 text-green-600 hover:bg-green-50 focus:ring-green-500;
+}
+
+.devsync-btn-outline-danger {
+  @apply border-red-600 text-red-600 hover:bg-red-50 focus:ring-red-500;
+}
+
+/* Ghost (No Background) */
+.devsync-btn-ghost {
+  @apply bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-300;
+}
+
+/* Link Style */
+.devsync-btn-link {
+  @apply bg-transparent text-blue-600 underline hover:text-blue-800 focus:ring-0;
+}
+
+/* Soft Style (low opacity) */
+.devsync-btn-soft-primary {
+  @apply bg-blue-100 text-blue-700 hover:bg-blue-200 focus:ring-blue-300;
+}
+
+.devsync-btn-soft-success {
+  @apply bg-green-100 text-green-700 hover:bg-green-200 focus:ring-green-300;
+}
+
+/* Sizes */
+.devsync-btn-xs {
+  @apply px-2 py-1 text-xs;
 }
 
 .devsync-btn-sm {
-  @apply px-3 py-1.5 text-xs;
+  @apply px-3 py-1.5 text-sm;
+}
+
+.devsync-btn-md {
+  @apply px-4 py-2 text-sm;
 }
 
 .devsync-btn-lg {
   @apply px-6 py-3 text-base;
 }
 
-.devsync-btn:disabled {
-  @apply opacity-50 cursor-not-allowed;
-} 
+.devsync-btn-xl {
+  @apply px-8 py-4 text-lg;
+}
+
+/* Shape Utilities */
+.devsync-btn-circle {
+  @apply rounded-full aspect-square p-2;
+}
+
+.devsync-btn-square {
+  @apply aspect-square p-3;
+}
+
+.devsync-btn-wide {
+  @apply px-8;
+}
+
+.devsync-btn-block {
+  @apply w-full flex justify-center;
+}
+
+/* States */
+.devsync-btn-loading {
+  @apply relative text-transparent pointer-events-none;
+}
+
+.devsync-btn-loading::after {
+  content: '';
+  @apply absolute w-4 h-4 border-2 border-t-transparent border-current 
+         animate-spin rounded-full;
+}
+
+/* Disabled */
+.devsync-btn:disabled,
+.devsync-btn-disabled {
+  @apply opacity-50 cursor-not-allowed pointer-events-none;
+}
+
+/* Responsive (Optional Class) */
+@media (max-width: 640px) {
+  .devsync-btn-responsive {
+    @apply px-3 py-1 text-xs;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .devsync-btn-responsive {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+@media (min-width: 1025px) {
+  .devsync-btn-responsive {
+    @apply px-6 py-3 text-base;
+  }
+}
